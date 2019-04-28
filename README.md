@@ -38,3 +38,22 @@ Error: {
 	    }
     }
 ```
+
+### Usage in GraphQL Playground
+
+```
+# Write your query or mutation here
+mutation {
+  register {
+    ... on ValidationError {
+      field
+      message
+    }
+    ... on TimeoutError {
+      reason
+      seconds
+    }
+  }
+}
+
+```
